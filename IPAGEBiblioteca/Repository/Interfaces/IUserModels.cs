@@ -5,6 +5,6 @@
 
     public interface IUserModels:IRepository<UserModels>
     {
-        Task<UserState> Login(string UserName, string Password); 
+        Task<UserStateRequered> Login(string UserName, string Password); 
     }
 }

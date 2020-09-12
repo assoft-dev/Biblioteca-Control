@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Threading.Tasks;
 
 namespace IPAGEBiblioteca.Repository.Helps
@@ -15,6 +16,10 @@ namespace IPAGEBiblioteca.Repository.Helps
             await this.biblioteContext.Database.EnsureCreatedAsync();
             await this.biblioteContext.Database.MigrateAsync();
             return true;
+        }
+        public async Task<bool> InsertFirstValues()
+        {
+            throw new NotImplementedException();
         }
     }
 }

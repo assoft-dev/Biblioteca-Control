@@ -26,5 +26,9 @@ namespace IPAGEBiblioteca.Repository.Helps
         public DbSet<TurmaModels> TurmaModels { get; set; }
         public DbSet<UserModels> UserModels { get; set; }
         public DbSet<LogsModels> LogsModels { get; set; }
+
+
+        public DbSet<PermissoesModels> PermissoesModels { get; set; }
+        public DbSet<GruposModels> GruposModels { get; set; }
     }
 }

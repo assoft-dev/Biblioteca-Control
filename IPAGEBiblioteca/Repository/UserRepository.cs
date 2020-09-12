@@ -1,4 +1,5 @@
-﻿using IPAGEBiblioteca.Models;
+﻿using IPAGEBiblioteca.Controllers.Helps;
+using IPAGEBiblioteca.Models;
 using IPAGEBiblioteca.Repository.Helps;
 using IPAGEBiblioteca.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -39,19 +40,60 @@ namespace IPAGEBiblioteca.Repository
             return await Salvar();
         }
 
-        public async Task<UserState> Login(string UserName, string Password)
+        public async Task<UserStateRequered> Login(string UserName, string Password)
         {
-            var result = await this.biblioteContext.UserModels
-                                                   .FirstOrDefaultAsync(x => x.UserName.Equals(UserName) &&
-                                                                             x.Password.Equals(Password));
-            if (result == null)
-                return UserState.Invalid;
-            else if (result.IsValido)
-                return UserState.Standbay;
-            else
-                return UserState.IsValid;
-        }
+            var md5 = HashControl.GetMD5Hash(Password);
 
+            var userModels = await this.biblioteContext.UserModels.ToListAsync();
+            if (userModels.Count == 0)
+            {
+                return new UserStateRequered
+                {
+                    UserState = UserState.Invalid_First_Values,
+                    Models = null,
+                };
+            }
+            var result = userModels.FirstOrDefault(x => x.UserName.ToUpper().Equals(UserName.ToUpper()) &&
+                                                        x.Password.Equals(md5));
+            if (result == null)
+            {
+                return new UserStateRequered
+                {
+                    UserState = UserState.Invalid,
+                    Models = null,
+                };
+            }       
+            else if (!result.IsValido){
+                return new UserStateRequered
+                {
+                    UserState = UserState.Standbay,
+                    Models = result,
+                };
+            }           
+            else if(result.GruposModels == null){
+                return new UserStateRequered
+                {
+                    UserState = UserState.Invalid_Grpos,
+                    Models = result,
+                };
+            }
+            else if (result.GruposModels.PermissoesModels == null)
+            {
+                return new UserStateRequered
+                {
+                    UserState = UserState.Invalid_Permissoes,
+                    Models = result,
+                };
+            }
+            else
+            {
+                return new UserStateRequered
+                {
+                    UserState = UserState.IsValid,
+                    Models = result,
+                };
+            }
+        }
         public async Task<bool> Update(UserModels Models)
         {
             this.biblioteContext.UserModels.Update(Models);

@@ -1,20 +1,20 @@
-﻿using DevExpress.XtraBars;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-
-namespace IPAGEBiblioteca.Views
+﻿namespace IPAGEBiblioteca.Views
 {
-    public partial class MenuDesign : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
+    using DevExpress.XtraBars.FluentDesignSystem;
+    using IPAGEBiblioteca.Models;
+
+    public partial class MenuDesign : FluentDesignForm
     {
-        public MenuDesign()
+        private PermissoesModels permissoesModels;
+
+        public MenuDesign(PermissoesModels permissoesModels)
         {
             InitializeComponent();
+            this.permissoesModels = permissoesModels;
+        }
+        private void AplicarPermissoes()
+        {
+            // Aplicar Todas as Permissoes;
         }
     }
 }

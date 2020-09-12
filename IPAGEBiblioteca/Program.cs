@@ -1,8 +1,7 @@
-﻿using IPAGEBiblioteca.Repository.Helps;
+﻿using IPAGEBiblioteca.Repository;
+using IPAGEBiblioteca.Repository.Helps;
 using IPAGEBiblioteca.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,7 +24,7 @@ namespace IPAGEBiblioteca
                 frm.Show();
                 Task.Run(async () => { await new BibliotecaContextData(new BiblioteContext()).Seed(); }).Wait();
             }
-            Application.Run(new frmLogin());
+            Application.Run(new frmLogin(new UserRepository(new BiblioteContext())));
         }
     }
 }
