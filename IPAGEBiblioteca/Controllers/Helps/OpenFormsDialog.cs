@@ -2,6 +2,7 @@
 {
     using DevExpress.XtraBars.Docking2010.Customization;
     using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
+    using IPAGEBiblioteca.Views.ViewHelps;
     using System.Windows.Forms;
 
     public class OpenFormsDialog: FlyoutDialog
@@ -22,7 +23,7 @@
         }
         public static DialogResult ShowForm(FlyoutAction actions, Control UserControleToShow)
         {
-            OpenFormsDialog customFlyout = new OpenFormsDialog(new Form { Width = 100, Height = 200 }, actions, UserControleToShow) ;
+            OpenFormsDialog customFlyout = new OpenFormsDialog(Program.menuDesign, actions, UserControleToShow) ;
             customFlyout.FormClosing += delegate { UserControleToShow.Dispose(); };
             return customFlyout.ShowDialog();
         }

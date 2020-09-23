@@ -32,14 +32,12 @@ namespace IPAGEBiblioteca.Repository
         {
             return await biblioteContext.TurmaModels.FirstOrDefaultAsync(predicate);
         }
-        public async Task<bool> Insert(TurmaModels Models)
+        public async Task<bool> Guardar(TurmaModels Models)
         {
-            await this.biblioteContext.TurmaModels.AddAsync(Models);
-            return await Salvar();
-        }
-        public async Task<bool> Update(TurmaModels Models)
-        {
-            this.biblioteContext.TurmaModels.Update(Models);
+            if (Models.ID == 0)
+                await this.biblioteContext.TurmaModels.AddAsync(Models);
+            else
+                this.biblioteContext.TurmaModels.Update(Models);
             return await Salvar();
         }
         private async Task<bool> Salvar()

@@ -29,14 +29,12 @@ namespace IPAGEBiblioteca.Repository
         {
             return await biblioteContext.AutorModels.FirstOrDefaultAsync(predicate);
         }
-        public async Task<bool> Insert(AutorModels Models)
+        public async Task<bool> Guardar(AutorModels Models)
         {
-            await this.biblioteContext.AutorModels.AddAsync(Models);
-            return await Salvar();
-        }
-        public async Task<bool> Update(AutorModels Models)
-        {
-            this.biblioteContext.AutorModels.Update(Models);
+            if (Models.ID == 0)
+                await this.biblioteContext.AutorModels.AddAsync(Models);
+            else
+                this.biblioteContext.AutorModels.Update(Models);
             return await Salvar();
         }
         private async Task<bool> Salvar()

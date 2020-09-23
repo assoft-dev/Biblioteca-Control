@@ -33,9 +33,12 @@ namespace IPAGEBiblioteca.Repository
         {
             return await biblioteContext.ClasseModels.FirstOrDefaultAsync(predicate);
         }
-        public async Task<bool> Insert(ClasseModels Models)
+        public async Task<bool> Guardar(ClasseModels Models)
         {
-            await this.biblioteContext.ClasseModels.AddAsync(Models);
+            if (Models.ID == 0)
+                await this.biblioteContext.ClasseModels.AddAsync(Models);
+            else
+                this.biblioteContext.ClasseModels.Update(Models);
             return await Salvar();
         }
         public async Task<bool> Update(ClasseModels Models)

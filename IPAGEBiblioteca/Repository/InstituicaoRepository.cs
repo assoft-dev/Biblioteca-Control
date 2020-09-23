@@ -16,7 +16,6 @@ namespace IPAGEBiblioteca.Repository
         {
             this.biblioteContext = biblioteContext;
         }
-
         public async Task<bool> Delete(InstituicaoModels Models)
         {
             biblioteContext.InstituicaoModels.Remove(Models);
@@ -30,14 +29,12 @@ namespace IPAGEBiblioteca.Repository
         {
             return await biblioteContext.InstituicaoModels.FirstOrDefaultAsync(predicate);
         }
-        public async Task<bool> Insert(InstituicaoModels Models)
+        public async Task<bool> Guardar(InstituicaoModels Models)
         {
-            await this.biblioteContext.InstituicaoModels.AddAsync(Models);
-            return await Salvar();
-        }
-        public async Task<bool> Update(InstituicaoModels Models)
-        {
-            this.biblioteContext.InstituicaoModels.Update(Models);
+            if (Models.ID == 0)
+                await this.biblioteContext.InstituicaoModels.AddAsync(Models);
+            else
+                this.biblioteContext.InstituicaoModels.Update(Models);
             return await Salvar();
         }
         private async Task<bool> Salvar()

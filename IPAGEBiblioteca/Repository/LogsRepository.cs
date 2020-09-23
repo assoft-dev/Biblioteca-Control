@@ -12,7 +12,6 @@ namespace IPAGEBiblioteca.Repository
     public class LogsRepository: IlogModels
     {
         private readonly BiblioteContext biblioteContext;
-
         public LogsRepository(BiblioteContext biblioteContext)
         {
             this.biblioteContext = biblioteContext;
@@ -30,21 +29,25 @@ namespace IPAGEBiblioteca.Repository
         {
             return await biblioteContext.LogsModels.FirstOrDefaultAsync(predicate);
         }
-        public async Task<bool> Insert(LogsModels Models)
+
+        public IQueryable<LogsModels> GetLogsModels(DateTime dateTime1, DateTime dateTime2)
         {
-            await this.biblioteContext.LogsModels.AddAsync(Models);
-            return await Salvar();
+            return this.biblioteContext.LogsModels
+                               .Include(x => x.userModels)
+                               .Where(x => x.DateTime.Date >= dateTime1.Date && x.DateTime <= dateTime2.Date);
         }
-        public async Task<bool> Update(LogsModels Models)
+
+        public async Task<bool> Guardar(LogsModels Models)
         {
-            this.biblioteContext.LogsModels.Update(Models);
+            if (Models.ID == 0)
+                await this.biblioteContext.LogsModels.AddAsync(Models);
+            else
+                this.biblioteContext.LogsModels.Update(Models);
             return await Salvar();
         }
         private async Task<bool> Salvar()
         {
             return await this.biblioteContext.SaveChangesAsync() > 0 ? true : false;
         }
-
     }
-
 }

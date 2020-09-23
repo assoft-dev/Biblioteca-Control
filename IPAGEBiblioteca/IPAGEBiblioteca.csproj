@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.EntityFrameworkCore.Design.3.1.8\build\net461\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.8\build\net461\Microsoft.EntityFrameworkCore.Design.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -39,16 +40,33 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.BonusSkins.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Extensions, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="FoxLearn.License">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 20.1\Binaries\FoxLearn.License.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -63,6 +81,9 @@
     </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Design, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Design.3.1.8\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Design.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.EntityFrameworkCore.Relational.3.1.8\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
@@ -178,18 +199,92 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Configura\ObjectoUserSetings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>ObjectoUserSetings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Extension\ExtensionEntityFramworkCore.cs" />
+    <Compile Include="Controllers\Helps\ArquivosGestao.cs" />
+    <Compile Include="Controllers\Helps\AutoCompleteDev.cs" />
+    <Compile Include="Controllers\Helps\EmailValidade.cs" />
+    <Compile Include="Controllers\Helps\EscreverLogs.cs" />
     <Compile Include="Controllers\Helps\HashControl.cs" />
+    <Compile Include="Controllers\Helps\ILicence.cs" />
+    <Compile Include="Controllers\Helps\MessageCaption.cs" />
     <Compile Include="Controllers\Helps\OpenFormsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Controllers\Helps\ProgramasExternos.cs" />
+    <Compile Include="Controllers\Helps\ReportControllers.cs" />
+    <Compile Include="Controllers\Helps\SaveLayoutXML.cs" />
+    <Compile Include="Migrations\20200912092954_Initial.cs" />
+    <Compile Include="Migrations\20200912092954_Initial.designer.cs">
+      <DependentUpon>20200912092954_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200915061223_Initial01.cs" />
+    <Compile Include="Migrations\20200915061223_Initial01.designer.cs">
+      <DependentUpon>20200915061223_Initial01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200915070709_Initial02.cs" />
+    <Compile Include="Migrations\20200915070709_Initial02.designer.cs">
+      <DependentUpon>20200915070709_Initial02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200915072208_Initial03.cs" />
+    <Compile Include="Migrations\20200915072208_Initial03.designer.cs">
+      <DependentUpon>20200915072208_Initial03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200915211912_Initial04.cs" />
+    <Compile Include="Migrations\20200915211912_Initial04.designer.cs">
+      <DependentUpon>20200915211912_Initial04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200916153506_Intial05.cs" />
+    <Compile Include="Migrations\20200916153506_Intial05.designer.cs">
+      <DependentUpon>20200916153506_Intial05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200916203047_Initial07.cs" />
+    <Compile Include="Migrations\20200916203047_Initial07.designer.cs">
+      <DependentUpon>20200916203047_Initial07.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200916204921_Initial08.cs" />
+    <Compile Include="Migrations\20200916204921_Initial08.designer.cs">
+      <DependentUpon>20200916204921_Initial08.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200918001319_initial_Stocks.cs" />
+    <Compile Include="Migrations\20200918001319_initial_Stocks.designer.cs">
+      <DependentUpon>20200918001319_initial_Stocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200918003626_RemoveTotalStck.cs" />
+    <Compile Include="Migrations\20200918003626_RemoveTotalStck.designer.cs">
+      <DependentUpon>20200918003626_RemoveTotalStck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200918214410_Initial_Pedidos.cs" />
+    <Compile Include="Migrations\20200918214410_Initial_Pedidos.designer.cs">
+      <DependentUpon>20200918214410_Initial_Pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200919092943_InitialEmail.cs" />
+    <Compile Include="Migrations\20200919092943_InitialEmail.designer.cs">
+      <DependentUpon>20200919092943_InitialEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200919094408_InitialData_Pedidos.cs" />
+    <Compile Include="Migrations\20200919094408_InitialData_Pedidos.designer.cs">
+      <DependentUpon>20200919094408_InitialData_Pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\BiblioteContextModelSnapshot.cs" />
     <Compile Include="Models\AlunoModels.cs" />
     <Compile Include="Models\AutorModels.cs" />
     <Compile Include="Models\ClasseModels.cs" />
+    <Compile Include="Models\DefinicoesModels.cs" />
     <Compile Include="Models\EditoraModels.cs" />
+    <Compile Include="Models\Enums\PedidosEstado.cs" />
     <Compile Include="Models\Enums\UserStates.cs" />
     <Compile Include="Models\GruposModels.cs" />
-    <Compile Include="Models\IEntity.cs" />
+    <Compile Include="Models\Helps\EmailMessage.cs" />
+    <Compile Include="Models\Helps\EstadoTransations.cs" />
+    <Compile Include="Models\Helps\LicenceModelsHelps.cs" />
+    <Compile Include="Models\Helps\ProdutoStocksModels.cs" />
     <Compile Include="Models\InstituicaoModels.cs" />
+    <Compile Include="Models\KeysGensModels.cs" />
     <Compile Include="Models\LivrosModels.cs" />
     <Compile Include="Models\LogsModels.cs" />
     <Compile Include="Models\PaisModels.cs" />
@@ -197,48 +292,270 @@
     <Compile Include="Models\PedidosOrdemModels.cs" />
     <Compile Include="Models\Enums\SexoModels.cs" />
     <Compile Include="Models\Permissoes.cs" />
+    <Compile Include="Models\SmtpConfigurationsModels.cs" />
+    <Compile Include="Models\StocksModels.cs" />
     <Compile Include="Models\TurmaModels.cs" />
     <Compile Include="Models\UserModels.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\rptAlunos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptAlunos.Designer.cs">
+      <DependentUpon>rptAlunos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptLivros.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptLivros.Designer.cs">
+      <DependentUpon>rptLivros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptLogs.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptLogs.Designer.cs">
+      <DependentUpon>rptLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptPedidos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptPedidos.Designer.cs">
+      <DependentUpon>rptPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptPedidosFactura.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptPedidosFactura.Designer.cs">
+      <DependentUpon>rptPedidosFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptStocks.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptStocks.Designer.cs">
+      <DependentUpon>rptStocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptUsuarios.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptUsuarios.Designer.cs">
+      <DependentUpon>rptUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repository\AlunoRepository.cs" />
     <Compile Include="Repository\AutorRepositoty.cs" />
     <Compile Include="Repository\ClasseRepository.cs" />
+    <Compile Include="Repository\DefinicoesRepository.cs" />
     <Compile Include="Repository\EditoraRepository.cs" />
+    <Compile Include="Repository\GmailEmailServiceRepository.cs" />
+    <Compile Include="Repository\GruposRepository.cs" />
     <Compile Include="Repository\Helps\BibliotecaContextData.cs" />
     <Compile Include="Repository\Helps\BiblioteContext.cs" />
     <Compile Include="Repository\InstituicaoRepository.cs" />
     <Compile Include="Repository\Interfaces\IAlunoModels.cs" />
     <Compile Include="Repository\Interfaces\IAutorModels.cs" />
     <Compile Include="Repository\Interfaces\IClasseModels.cs" />
+    <Compile Include="Repository\Interfaces\IDefinicoesModels.cs" />
     <Compile Include="Repository\Interfaces\IEditoraModels.cs" />
+    <Compile Include="Repository\Interfaces\IGmailEmailService.cs" />
+    <Compile Include="Repository\Interfaces\IGruposRepository.cs" />
     <Compile Include="Repository\Interfaces\IInstituicaoModels.cs" />
+    <Compile Include="Repository\Interfaces\IKeyGenRepository.cs" />
     <Compile Include="Repository\Interfaces\ILivrosModels.cs" />
     <Compile Include="Repository\Interfaces\IlogModels.cs" />
     <Compile Include="Repository\Interfaces\IPaisModels.cs" />
     <Compile Include="Repository\Interfaces\IPedidoModels.cs" />
     <Compile Include="Repository\Interfaces\IPedidoOrdemModels.cs" />
+    <Compile Include="Repository\Interfaces\IPermissoesModels.cs" />
     <Compile Include="Repository\Interfaces\IRepository.cs" />
+    <Compile Include="Repository\Interfaces\ISmtpConfigurationsModels.cs" />
+    <Compile Include="Repository\Interfaces\IStocksModels.cs" />
+    <Compile Include="Repository\Interfaces\ITransationRepository.cs" />
     <Compile Include="Repository\Interfaces\ITurmaModels.cs" />
     <Compile Include="Repository\Interfaces\IUserModels.cs" />
+    <Compile Include="Repository\KeyGenRepository.cs" />
     <Compile Include="Repository\LivrosRepository.cs" />
     <Compile Include="Repository\LogsRepository.cs" />
     <Compile Include="Repository\PaisRepository.cs" />
     <Compile Include="Repository\PedidosOrdemRepository.cs" />
     <Compile Include="Repository\PedidosRepository.cs" />
+    <Compile Include="Repository\PermissoesRepository.cs" />
+    <Compile Include="Repository\SmtpConfigurationsRepository.cs" />
+    <Compile Include="Repository\StocksModelsRepository.cs" />
+    <Compile Include="Repository\TransationRepository.cs" />
     <Compile Include="Repository\TurmaRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Views\ControlView\frmPedidosRequisicoes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmPedidosRequisicoes.Designer.cs">
+      <DependentUpon>frmPedidosRequisicoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmClasseAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmClasseAdd.Designer.cs">
+      <DependentUpon>frmClasseAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmClasse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmClasse.Designer.cs">
+      <DependentUpon>frmClasse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmAlunos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmAlunos.Designer.cs">
+      <DependentUpon>frmAlunos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmAlunosAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmAlunosAdd.Designer.cs">
+      <DependentUpon>frmAlunosAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmPedidosRequisicoesAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmPedidosRequisicoesAdd.designer.cs">
+      <DependentUpon>frmPedidosRequisicoesAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmPedidosRequisicoesDetalhes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmPedidosRequisicoesDetalhes.Designer.cs">
+      <DependentUpon>frmPedidosRequisicoesDetalhes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmStocksAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmStocksAdd.Designer.cs">
+      <DependentUpon>frmStocksAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmStocks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmStocks.Designer.cs">
+      <DependentUpon>frmStocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmTurmaAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmTurmaAdd.Designer.cs">
+      <DependentUpon>frmTurmaAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmTurma.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmTurma.Designer.cs">
+      <DependentUpon>frmTurma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmEditora.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmEditora.Designer.cs">
+      <DependentUpon>frmEditora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmEditoraAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmEditoraAdd.Designer.cs">
+      <DependentUpon>frmEditoraAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmAutor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmAutor.Designer.cs">
+      <DependentUpon>frmAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmAutorAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmAutorAdd.Designer.cs">
+      <DependentUpon>frmAutorAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmInstituicao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmInstituicao.Designer.cs">
+      <DependentUpon>frmInstituicao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmInstituicaoAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmInstituicaoAdd.Designer.cs">
+      <DependentUpon>frmInstituicaoAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmPaisAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmPaisAdd.Designer.cs">
+      <DependentUpon>frmPaisAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmPais.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmPais.Designer.cs">
+      <DependentUpon>frmPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmGrupos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmGrupos.Designer.cs">
+      <DependentUpon>frmGrupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmLogs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmLogs.Designer.cs">
+      <DependentUpon>frmLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmLivros.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmLivros.Designer.cs">
+      <DependentUpon>frmLivros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmDefinicoesAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmDefinicoesAdd.Designer.cs">
+      <DependentUpon>frmDefinicoesAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ControlView\frmUsuarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\ControlView\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ControlView\frmGruposAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmGruposAdd.Designer.cs">
+      <DependentUpon>frmGruposAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmPermisssoesAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmPermisssoesAdd.Designer.cs">
+      <DependentUpon>frmPermisssoesAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmLivrosAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmLivrosAdd.Designer.cs">
+      <DependentUpon>frmLivrosAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ControlView\frmUsuariosAdd.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\ControlView\frmUsuariosAdd.Designer.cs">
       <DependentUpon>frmUsuariosAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlView\frmUsuariosRecovery.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ControlView\frmUsuariosRecovery.Designer.cs">
+      <DependentUpon>frmUsuariosRecovery.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmLogin.cs">
       <SubType>Form</SubType>
@@ -252,11 +569,38 @@
     <Compile Include="Views\frmSplash.Designer.cs">
       <DependentUpon>frmSplash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\HelpsLicence\frmAbout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HelpsLicence\frmAbout.designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HelpsLicence\frmGerar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HelpsLicence\frmGerar.designer.cs">
+      <DependentUpon>frmGerar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HelpsLicence\frmRegistar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HelpsLicence\frmRegistar.designer.cs">
+      <DependentUpon>frmRegistar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MenuDesign.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\MenuDesign.Designer.cs">
       <DependentUpon>MenuDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewHelps\frmBackground.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ViewHelps\frmBackground.Designer.cs">
+      <DependentUpon>frmBackground.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewHelps\MainForms.cs">
+      <SubType>Form</SubType>
     </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -268,11 +612,113 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report\rptAlunos.resx">
+      <DependentUpon>rptAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptLivros.resx">
+      <DependentUpon>rptLivros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptLogs.resx">
+      <DependentUpon>rptLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptPedidos.resx">
+      <DependentUpon>rptPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptPedidosFactura.resx">
+      <DependentUpon>rptPedidosFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptStocks.resx">
+      <DependentUpon>rptStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptUsuarios.resx">
+      <DependentUpon>rptUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmPedidosRequisicoes.resx">
+      <DependentUpon>frmPedidosRequisicoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmClasseAdd.resx">
+      <DependentUpon>frmClasseAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmClasse.resx">
+      <DependentUpon>frmClasse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmAlunos.resx">
+      <DependentUpon>frmAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmAlunosAdd.resx">
+      <DependentUpon>frmAlunosAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmPedidosRequisicoesAdd.resx">
+      <DependentUpon>frmPedidosRequisicoesAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmPedidosRequisicoesDetalhes.resx">
+      <DependentUpon>frmPedidosRequisicoesDetalhes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmStocksAdd.resx">
+      <DependentUpon>frmStocksAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmStocks.resx">
+      <DependentUpon>frmStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmTurmaAdd.resx">
+      <DependentUpon>frmTurmaAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmTurma.resx">
+      <DependentUpon>frmTurma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmEditora.resx">
+      <DependentUpon>frmEditora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmEditoraAdd.resx">
+      <DependentUpon>frmEditoraAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmAutor.resx">
+      <DependentUpon>frmAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmAutorAdd.resx">
+      <DependentUpon>frmAutorAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmInstituicao.resx">
+      <DependentUpon>frmInstituicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmInstituicaoAdd.resx">
+      <DependentUpon>frmInstituicaoAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmPaisAdd.resx">
+      <DependentUpon>frmPaisAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmPais.resx">
+      <DependentUpon>frmPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmGrupos.resx">
+      <DependentUpon>frmGrupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmLogs.resx">
+      <DependentUpon>frmLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmLivros.resx">
+      <DependentUpon>frmLivros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmDefinicoesAdd.resx">
+      <DependentUpon>frmDefinicoesAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ControlView\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmGruposAdd.resx">
+      <DependentUpon>frmGruposAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmPermisssoesAdd.resx">
+      <DependentUpon>frmPermisssoesAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmLivrosAdd.resx">
+      <DependentUpon>frmLivrosAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ControlView\frmUsuariosAdd.resx">
       <DependentUpon>frmUsuariosAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ControlView\frmUsuariosRecovery.resx">
+      <DependentUpon>frmUsuariosRecovery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -280,10 +726,42 @@
     <EmbeddedResource Include="Views\frmSplash.resx">
       <DependentUpon>frmSplash.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\HelpsLicence\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HelpsLicence\frmGerar.resx">
+      <DependentUpon>frmGerar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HelpsLicence\frmRegistar.resx">
+      <DependentUpon>frmRegistar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MenuDesign.resx">
       <DependentUpon>MenuDesign.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewHelps\frmBackground.resx">
+      <DependentUpon>frmBackground.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Controllers\Configura\ObjectoUserSetings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>ObjectoUserSetings1.Designer.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.AlunoModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.AutorModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.ClasseModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.DefinicoesModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.EditoraModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.GruposModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.Helps.ProdutoStocksModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.InstituicaoModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.LivrosModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.LogsModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.PaisModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.PedidosModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.PedidosOrdemModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.PermissoesModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.StocksModels.datasource" />
+    <None Include="Properties\DataSources\IPAGEBiblioteca.Models.TurmaModels.datasource" />
     <None Include="Properties\DataSources\IPAGEBiblioteca.Models.UserModels.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -309,5 +787,6 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.8\build\net461\Microsoft.EntityFrameworkCore.Design.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.EntityFrameworkCore.Design.3.1.8\build\net461\Microsoft.EntityFrameworkCore.Design.props'))" />
   </Target>
 </Project>

@@ -29,14 +29,12 @@
         {
             return await biblioteContext.AlunoModels.FirstOrDefaultAsync(predicate);
         }
-        public async Task<bool> Insert(AlunoModels Models)
+        public async Task<bool> Guardar(AlunoModels Models)
         {
-            await this.biblioteContext.AlunoModels.AddAsync(Models);
-            return await Salvar();
-        }
-        public async Task<bool> Update(AlunoModels Models)
-        {
-            this.biblioteContext.AlunoModels.Update(Models);
+            if (Models.ID == 0)
+                await this.biblioteContext.AlunoModels.AddAsync(Models);
+            else
+                this.biblioteContext.AlunoModels.Update(Models);
             return await Salvar();
         }
         private async Task<bool> Salvar()

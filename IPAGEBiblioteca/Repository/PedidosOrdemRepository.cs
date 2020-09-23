@@ -32,14 +32,12 @@ namespace IPAGEBiblioteca.Repository
         {
             return await biblioteContext.PedidosOrdemModels.FirstOrDefaultAsync(predicate);
         }
-        public async Task<bool> Insert(PedidosOrdemModels Models)
+        public async Task<bool> Guardar(PedidosOrdemModels Models)
         {
-            await this.biblioteContext.PedidosOrdemModels.AddAsync(Models);
-            return await Salvar();
-        }
-        public async Task<bool> Update(PedidosOrdemModels Models)
-        {
-            this.biblioteContext.PedidosOrdemModels.Update(Models);
+            if (Models.ID == 0)
+                await this.biblioteContext.PedidosOrdemModels.AddAsync(Models);
+            else
+                this.biblioteContext.PedidosOrdemModels.Update(Models);
             return await Salvar();
         }
         private async Task<bool> Salvar()

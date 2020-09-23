@@ -33,14 +33,12 @@
         {
             return await biblioteContext.PaisModels.FirstOrDefaultAsync(predicate);
         }
-        public async Task<bool> Insert(PaisModels Models)
+        public async Task<bool> Guardar(PaisModels Models)
         {
-            await this.biblioteContext.PaisModels.AddAsync(Models);
-            return await Salvar();
-        }
-        public async Task<bool> Update(PaisModels Models)
-        {
-            this.biblioteContext.PaisModels.Update(Models);
+            if (Models.ID == 0)
+                await this.biblioteContext.PaisModels.AddAsync(Models);
+            else
+                this.biblioteContext.PaisModels.Update(Models);
             return await Salvar();
         }
         private async Task<bool> Salvar()

@@ -33,14 +33,12 @@ namespace IPAGEBiblioteca.Repository
         {
             return await biblioteContext.EditoraModels.FirstOrDefaultAsync(predicate);
         }
-        public async Task<bool> Insert(EditoraModels Models)
+        public async Task<bool> Guardar(EditoraModels Models)
         {
-            await this.biblioteContext.EditoraModels.AddAsync(Models);
-            return await Salvar();
-        }
-        public async Task<bool> Update(EditoraModels Models)
-        {
-            this.biblioteContext.EditoraModels.Update(Models);
+            if (Models.ID == 0)
+                await this.biblioteContext.EditoraModels.AddAsync(Models);
+            else
+                this.biblioteContext.EditoraModels.Update(Models);
             return await Salvar();
         }
         private async Task<bool> Salvar()
